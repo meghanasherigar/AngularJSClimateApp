@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/climateController.js"></script>
+<script src="js/climateService.js"></script>
+
+<body ng-app="climateApp" ng-controller="climateController"  >
+       
+    <header>
+        <h3>Climate Application</h3>
+    </header>
+  
+    <section class="wrapper">
+            
+        <div class="climateDetails">
+                <div class="searchPlace">
+                        <input type="text" ng-model="searchCity">
+                        <button ng-click="showClimateDetails(searchCity)">Search</button>
+                    </div>
+            <h3>Place Name:{{citieslist.name}}</h3>
+            <h4>Country:{{citieslist.sys.country}}</h4>
+            <h5>Place Id:{{citieslist.id}}</h5>
+            <div>
+                    <div class=" contentBlock">
+                            <img src="img/climate1.jpg">
+                            <div>
+                                <p>Longitude:{{citieslist.coord.lon}}</p>
+                                <p>Latitude:{{citieslist.coord.lat}}</p>
+                            </div>
+                        </div>
+                        <div class=" contentBlock">
+                            <img src="img/temperatureImg.jpg">
+                            <div>
+                                <p>Temperature:{{citieslist.main.temp}}</p>
+                                <p>Humidity:{{citieslist.main.humidity}}</p>
+                            </div>
+                        </div>
+                        <div class=" contentBlock">
+                            <img src="img/sunriseImg.jfif">
+                            <div>
+                                <p>Sunrise:{{citieslist.sys.sunrise}}</p>
+                                <p>Sunset:{{citieslist.sys.sunset}}</p>
+            
+                            </div>
+                        </div>
+                        <div class=" contentBlock">
+                            <img src="img/climate3.jpg">
+                            <div>
+                                <p>Wind speed:{{citieslist.wind.speed}}</p>
+                                <p>Wind Degree:{{citieslist.wind.deg}}</p>
+            
+                            </div>
+                        </div>
+
+            </div>
+          
+        </div>
+    </section>
+    <footer>
+        <p>@Copyright @xyz</p>
+    </footer>
+</body>
+
+</html>
